@@ -47,15 +47,28 @@ public class SeasonTicketTest extends TestCase {
 		 seasonTicket1.endUsage(seasonTicket1.getEndValidPeriod());
 		 seasonTicket2.endUsage(seasonTicket2.getEndValidPeriod());
 		 
-		 System.out.println(seasonTicket1);
-		 System.out.println(seasonTicket2);
+		 
 		 
 		 //Check whether endUsage Method worked with inUse method
 		 //if endUsage worked, both tickets will no longer be in use
 		 // inUse method will return false
 		 
-		 assertTrue(seasonTicket1.inUse());
-		 assertTrue(seasonTicket2.inUse());
+		 assertTrue(!seasonTicket1.inUse());
+		 assertTrue(!seasonTicket2.inUse());
+		 
+		 
+		 
+		 //record new usage for seasonTicket1
+		 seasonTicket1.recordUsage(new UsageRecord(seasonTicket1.getId(),1505223221078L ));
+		 seasonTicket1.endUsage(1505223288889L);
+		 
+		 //List all the usage records of seasonTicket1
+		 List list = seasonTicket1.getUsageRecords();
+		 
+		 for(int i = 0; i < list.size(); i++){
+			 System.out.println(list.get(i));
+		 }
+		 
 	}
 	  //Returns ticketId
       public String getId(String ticketId) {
