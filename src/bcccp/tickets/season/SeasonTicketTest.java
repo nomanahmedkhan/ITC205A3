@@ -24,6 +24,7 @@ public class SeasonTicketTest extends TestCase {
 		
 		SeasonTicket seasonTicket1 = new SeasonTicket (ticketId, carparkId, startValidPeriod, endValidPeriod);
 		
+		
 		//Methods to check that the object is being initiated with assigned values
 		assertTrue(seasonTicket1.getId() == getId(ticketId));
 		assertTrue(seasonTicket1.getCarparkId() == getCarparkId(carparkId));
@@ -32,9 +33,29 @@ public class SeasonTicketTest extends TestCase {
 		
 		//Check whether UsageRecord and inUse method works.
 		 seasonTicket1.recordUsage(new UsageRecord(seasonTicket1.getId(), seasonTicket1.getStartValidPeriod()));
+		 
+		 
 		 assertTrue(seasonTicket1.inUse());
+		 
+		 //create new object with random values and record usage
+		 SeasonTicket seasonTicket2 = new SeasonTicket ("S6666", "Bathurs Chase",1505220598689L,1505223288889L);
+		 seasonTicket2.recordUsage(new UsageRecord(seasonTicket2.getId(), seasonTicket2.getStartValidPeriod()));
+		 
 		
-		
+		 //Check endUsage method and print both objects information with toString
+		 
+		 seasonTicket1.endUsage(seasonTicket1.getEndValidPeriod());
+		 seasonTicket2.endUsage(seasonTicket2.getEndValidPeriod());
+		 
+		 System.out.println(seasonTicket1);
+		 System.out.println(seasonTicket2);
+		 
+		 //Check whether endUsage Method worked with inUse method
+		 //if endUsage worked, both tickets will no longer be in use
+		 // inUse method will return false
+		 
+		 assertTrue(seasonTicket1.inUse());
+		 assertTrue(seasonTicket2.inUse());
 	}
 	  //Returns ticketId
       public String getId(String ticketId) {
