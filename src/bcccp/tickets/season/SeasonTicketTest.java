@@ -30,6 +30,9 @@ public class SeasonTicketTest extends TestCase {
 		assertTrue(seasonTicket1.getStartValidPeriod() == getStartValidPeriod(startValidPeriod));
 		assertTrue(seasonTicket1.getEndValidPeriod() == getEndValidPeriod(endValidPeriod));
 		
+		//Check whether UsageRecord and inUse method works.
+		 seasonTicket1.recordUsage(new UsageRecord(seasonTicket1.getId(), seasonTicket1.getStartValidPeriod()));
+		 assertTrue(seasonTicket1.inUse());
 		
 		
 	}
