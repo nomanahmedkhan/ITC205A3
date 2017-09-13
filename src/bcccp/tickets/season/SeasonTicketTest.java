@@ -3,14 +3,17 @@ package bcccp.tickets.season;
 import java.util.List;
 
 import junit.framework.TestCase;
+import org.junit.*;
+
 
 public class SeasonTicketTest extends TestCase {
-
-	@Test
+	
 	//unit testing for SeasonTicket class by noman
-	public void testSeasonTicketMethods(){
-		List<IUsageRecord> usages;
-		IUsageRecord currentUsage = null;
+	
+	@Test 
+	
+	 public void testSeasonTicketMethods(){
+		
 		
 		String ticketId = "S5555"; 
 		String carparkId = "Bathurst Chase";
@@ -19,9 +22,17 @@ public class SeasonTicketTest extends TestCase {
 		
 		SeasonTicket seasonTicket1 = new SeasonTicket (ticketId, carparkId, startValidPeriod, endValidPeriod);
 		
+		//Methods to check that the class is being initiated with assigned values
+		assertTrue(seasonTicket1.getId() == getId(ticketId));
 	     
 		
 	}
 	
+	
+      public String getId(String ticketId) {
+		return ticketId;
+	}
+	
+
 	
 }
