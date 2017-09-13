@@ -1,5 +1,6 @@
 package bcccp.tickets.season;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import junit.framework.TestCase;
@@ -20,13 +21,20 @@ public class SeasonTicketTest extends TestCase {
 		long startValidPeriod = 1505220596574L;
 		long endValidPeriod = 1505223221078L;
 		
+		
 		SeasonTicket seasonTicket1 = new SeasonTicket (ticketId, carparkId, startValidPeriod, endValidPeriod);
 		
-		//Methods to check that the class is being initiated with assigned values
+		//Methods to check that the object is being initiated with assigned values
 		assertTrue(seasonTicket1.getId() == getId(ticketId));
 		assertTrue(seasonTicket1.getCarparkId() == getCarparkId(carparkId));
 		assertTrue(seasonTicket1.getStartValidPeriod() == getStartValidPeriod(startValidPeriod));
 		assertTrue(seasonTicket1.getEndValidPeriod() == getEndValidPeriod(endValidPeriod));
+		
+		//Check whether UsageRecord and inUse method works.
+		 seasonTicket1.recordUsage(new UsageRecord(seasonTicket1.getId(), seasonTicket1.getStartValidPeriod()));
+		 assertTrue(seasonTicket1.inUse());
+		
+		
 	}
 	  //Returns ticketId
       public String getId(String ticketId) {
