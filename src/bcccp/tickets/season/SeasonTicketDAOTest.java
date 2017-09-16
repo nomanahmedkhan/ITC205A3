@@ -75,7 +75,17 @@ public class SeasonTicketDAOTest {
 		
 		//Check getNumberOfTickets method.
 		//should contain 5 tickets that have been added.
-		assertTrue(test1.getNumberOfTickets() == 5);
+		//assertTrue(test1.getNumberOfTickets() == 5);
+		
+		//check findTicketById method
+		ISeasonTicket testTicket = test1.findTicketById("S2222");
+		System.out.println(testTicket);
+		
+		ISeasonTicket testTicket2 = test1.findTicketById("S9999");
+		System.out.println(testTicket2);
+		
+		ISeasonTicket testTicket3 = test1.findTicketById("S0000");
+		System.out.println(testTicket3);
 		
 		//printing the HashMap to see if the values were actually registered/deregistered.
 		//System.out.println(Arrays.asList(currentTickets)); // method 1
