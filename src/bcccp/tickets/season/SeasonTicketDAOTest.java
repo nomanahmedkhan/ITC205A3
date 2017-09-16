@@ -51,7 +51,7 @@ public class SeasonTicketDAOTest {
 		
 		
 		//Check if method works by checking if ticket1 is no longer present in currentTickets
-		assertTrue(test1.currentTickets.containsKey(ticket1.getId()) );
+		assertTrue(!test1.currentTickets.containsKey(ticket1.getId()) );
 		
 		
 	
