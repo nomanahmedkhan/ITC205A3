@@ -28,7 +28,8 @@ public class SeasonTicketDAOTest {
 		//Register the Second Ticket.
 		registerTicket(ticket2);
 		
-		
+		//printing the HashMap to see if the values were actually registered.
+		System.out.println(Arrays.asList(currentTickets)); // method 1
 	}
 	
 	
