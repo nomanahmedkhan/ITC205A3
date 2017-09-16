@@ -38,6 +38,13 @@ public class SeasonTicketDAOTest {
 		//call registerTicket method of SeasonTicketDAO class and register ticket1
 		test1.registerTicket(ticket1);
 		
+		//check if ticket is registered 
+		assertTrue(test1.currentTickets.containsKey(ticket1.getId()) );
+		
+		//check if the ticket values match for register ticket method. 
+		
+		assertTrue(currentTickets.get(ticket1.getId()) == test1.currentTickets.get(ticket1.getId()) );
+		
 		
 	
 		
