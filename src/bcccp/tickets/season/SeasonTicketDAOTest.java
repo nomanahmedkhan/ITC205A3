@@ -48,16 +48,16 @@ public class SeasonTicketDAOTest {
 		//Check deregisterTicket method
 		/* Deregister ticket1 */
 		test1.deregisterTicket(ticket1);
-		
+		deregisterTicket(ticket1);
 		
 		//Check if method works by checking if ticket1 is no longer present in currentTickets
 		assertTrue(!test1.currentTickets.containsKey(ticket1.getId()) );
 		
 		
-	
+	  
 		
-		//printing the HashMap to see if the values were actually registered.
-		//System.out.println(Arrays.asList(currentTickets)); // method 1
+		//printing the HashMap to see if the values were actually registered/deregistered.
+		System.out.println(Arrays.asList(currentTickets)); // method 1
 	}
 	
 	
@@ -69,4 +69,10 @@ public class SeasonTicketDAOTest {
 		}
 	}
 
+	//method to de register ticket in the Map list
+	public void deregisterTicket(ISeasonTicket ticket) {
+		if (currentTickets.containsKey(ticket.getId())) {
+			currentTickets.remove(ticket.getId());
+		}
+	}
 }
