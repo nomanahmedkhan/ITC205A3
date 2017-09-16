@@ -23,7 +23,10 @@ public class SeasonTicketDAOTest {
 		//creating another ticket object for testing
 		ISeasonTicket ticket2 = new SeasonTicket("S8888", "Bathurst Chase", System.currentTimeMillis(), 
 				0L); 
-		
+		//Register the first ticket.
+		registerTicket(ticket1);
+		//Register the Second Ticket.
+		registerTicket(ticket2);
 		
 		
 	}
