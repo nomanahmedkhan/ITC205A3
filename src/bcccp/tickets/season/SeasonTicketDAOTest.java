@@ -1,5 +1,6 @@
 package bcccp.tickets.season;
 
+import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
 import bcccp.tickets.season.ISeasonTicket;
@@ -11,11 +12,13 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 public class SeasonTicketDAOTest {
-
+    
+	//Create a Map list for storing tickets	
+	Map<String, ISeasonTicket> currentTickets = new HashMap<>();
+	
 	@Test
 	public void testSeasonTicketDAOMethods() {
-        //Create a Map list for storing tickets	
-		Map<String, ISeasonTicket> currentTickets = new HashMap<>();
+        
 		
 		//Creating a ticket object for testing
 		ISeasonTicket ticket1 = new SeasonTicket("S7777", "Bathurst Chase", System.currentTimeMillis(), 
