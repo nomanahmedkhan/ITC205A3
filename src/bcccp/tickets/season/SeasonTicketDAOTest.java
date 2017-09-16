@@ -31,6 +31,16 @@ public class SeasonTicketDAOTest {
 		//Register the Second Ticket.
 		registerTicket(ticket2);
 		
+		
+		//create an instance of SeasonTicketDAO class.
+		SeasonTicketDAO test1 = new SeasonTicketDAO(new UsageRecordFactory());
+		
+		//call registerTicket method of SeasonTicketDAO class and register ticket1
+		test1.registerTicket(ticket1);
+		
+		
+	
+		
 		//printing the HashMap to see if the values were actually registered.
 		System.out.println(Arrays.asList(currentTickets)); // method 1
 	}
