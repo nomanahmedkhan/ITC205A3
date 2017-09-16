@@ -8,7 +8,7 @@ import bcccp.tickets.season.IUsageRecordFactory;
 
 public class SeasonTicketDAO implements ISeasonTicketDAO {
 
-	private Map<String, ISeasonTicket> currentTickets;
+	public Map<String, ISeasonTicket> currentTickets;
 	private IUsageRecordFactory factory;
 
 	
