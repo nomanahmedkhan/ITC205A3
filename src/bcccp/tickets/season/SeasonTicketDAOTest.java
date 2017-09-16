@@ -39,17 +39,25 @@ public class SeasonTicketDAOTest {
 		test1.registerTicket(ticket1);
 		
 		//check if ticket is registered 
-		assertTrue(test1.currentTickets.containsKey(ticket1.getId()) );
+		//assertTrue(test1.currentTickets.containsKey(ticket1.getId()) );
 		
 		//check if the ticket values match for register ticket method. 
+		//assertTrue(currentTickets.get(ticket1.getId()) == test1.currentTickets.get(ticket1.getId()) );
 		
-		assertTrue(currentTickets.get(ticket1.getId()) == test1.currentTickets.get(ticket1.getId()) );
+		
+		//Check deregisterTicket method
+		/* Deregister ticket1 */
+		test1.deregisterTicket(ticket1);
+		
+		
+		//Check if method works by checking if ticket1 is no longer present in currentTickets
+		assertTrue(test1.currentTickets.containsKey(ticket1.getId()) );
 		
 		
 	
 		
 		//printing the HashMap to see if the values were actually registered.
-		System.out.println(Arrays.asList(currentTickets)); // method 1
+		//System.out.println(Arrays.asList(currentTickets)); // method 1
 	}
 	
 	
