@@ -94,6 +94,12 @@ public class SeasonTicketDAOTest {
 		//See if ticket3's usage has been recorded.
 		System.out.println(ticket3);
 		
+		//Test record exit method
+		test1.recordTicketExit(ticket3.getId());
+		
+		//See if ticket3's usage has been recorded.
+				System.out.println(ticket3);
+		
 		//printing the HashMap to see if the values were actually registered/deregistered.
 		//System.out.println(Arrays.asList(currentTickets)); // method 1
 	}
