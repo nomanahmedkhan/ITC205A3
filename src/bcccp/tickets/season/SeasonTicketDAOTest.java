@@ -35,7 +35,7 @@ public class SeasonTicketDAOTest {
 		//create an instance of SeasonTicketDAO class.
 		SeasonTicketDAO test1 = new SeasonTicketDAO(new UsageRecordFactory());
 		
-		//call registerTicket method of SeasonTicketDAO class and register ticket1
+		/*call registerTicket method of SeasonTicketDAO class and register ticket1
 		test1.registerTicket(ticket1);
 		
 		//check if ticket is registered 
@@ -46,15 +46,23 @@ public class SeasonTicketDAOTest {
 		
 		
 		//Check deregisterTicket method
-		/* Deregister ticket1 */
+		// Deregister ticket1 
 		test1.deregisterTicket(ticket1);
 		deregisterTicket(ticket1);
 		
 		//Check if method works by checking if ticket1 is no longer present in currentTickets
-		assertTrue(!test1.currentTickets.containsKey(ticket1.getId()) );
+		//assertTrue(!test1.currentTickets.containsKey(ticket1.getId()) );
+		*/
 		
-		
+		//Create 3 more tickets 
+		ISeasonTicket ticket3 = new SeasonTicket("S9999", "Sydney", System.currentTimeMillis(), 
+				0L);
 	  
+		ISeasonTicket ticket4 = new SeasonTicket("S1111", "Melbourne", System.currentTimeMillis(), 
+				0L);
+		
+		ISeasonTicket ticket5 = new SeasonTicket("S2222", "Brisbane", System.currentTimeMillis(), 
+				0L);
 		
 		//printing the HashMap to see if the values were actually registered/deregistered.
 		System.out.println(Arrays.asList(currentTickets)); // method 1
