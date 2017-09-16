@@ -65,9 +65,7 @@ public class SeasonTicketDAOTest {
 				0L);
 		
 		//register the newly created tickets
-		registerTicket(ticket3);
-		registerTicket(ticket4);
-		registerTicket(ticket5);
+	
 		
 		test1.registerTicket(ticket1);
 		test1.registerTicket(ticket2);
@@ -75,8 +73,12 @@ public class SeasonTicketDAOTest {
 		test1.registerTicket(ticket4);
 		test1.registerTicket(ticket5);
 		
+		//Check getNumberOfTickets method.
+		//should contain 5 tickets that have been added.
+		assertTrue(test1.getNumberOfTickets() == 5);
+		
 		//printing the HashMap to see if the values were actually registered/deregistered.
-		System.out.println(Arrays.asList(currentTickets)); // method 1
+		//System.out.println(Arrays.asList(currentTickets)); // method 1
 	}
 	
 	
