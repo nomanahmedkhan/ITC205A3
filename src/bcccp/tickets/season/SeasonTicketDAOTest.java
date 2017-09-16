@@ -30,7 +30,7 @@ public class SeasonTicketDAOTest {
 	
 	
 	
-	
+	//Method to register ticket in the Map list. 
 	public void registerTicket(ISeasonTicket ticket) {
 		if (!currentTickets.containsKey(ticket.getId())) {
 			currentTickets.put(ticket.getId(),ticket);
