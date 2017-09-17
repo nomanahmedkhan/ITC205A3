@@ -25,11 +25,12 @@ public class IntegrationTesting {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
        
-		//Inititate the entity class
+		//Initiate the entity class
 		
 		SeasonTicket firstTicket = new SeasonTicket ("S1234", "Church Lane", System.currentTimeMillis(), 0L);
 		
-		
+		//Test whether the entity class was initiated
+		System.out.println(firstTicket);
 	}
 
 }
