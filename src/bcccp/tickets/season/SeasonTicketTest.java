@@ -1,6 +1,10 @@
+/* This class is created By Noman Ahmed Khan for unit testing of SeasonTicket class
+ while following the JUnit framework. It tests the methods within the SeasonTicket Class
+ */
+
 package bcccp.tickets.season;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import junit.framework.TestCase;
