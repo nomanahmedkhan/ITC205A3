@@ -53,11 +53,28 @@ public class IntegrationTesting {
 		
 		UsageRecord testVariable1 = new UsageRecord(ticket.getId(),ticket.getStartValidPeriod());
 		
-        System.out.println("The recorded usage for ticket is: " + testVariable1);
+        System.out.println("\nThe recorded usage for ticket is before ending usage: \n" + testVariable1);
        
-
+		ticket.recordUsage(testVariable1);
 		
-			
+		/*boolean isTicketInUse = ticket.inUse();
+		
+		if(isTicketInUse == true){
+			System.out.println("UsageRecord worked, Ticket is currently in Use " +
+					"The Details are as follows\n" + ticket);
+		}
+		else if(isTicketInUse == false){
+		    System.out.println("UsageRecord worked, Ticket is not in Use");
+		}
+		else{
+			System.out.println("UsageRecord did not work");
+		}*/
+		
+       ticket.endUsage(System.currentTimeMillis());
+		
+		System.out.println("\nThe details recorded within UsageRecord class after ending usage: \n" + testVariable1);
+		System.out.println("");
+		System.out.println("The details recorded within SeasonTicket class after ending usage: \n" + ticket);
 		
 	}
 
