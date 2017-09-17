@@ -23,14 +23,42 @@ public class IntegrationTesting {
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
        
 		//Initiate the entity class
 		
 		SeasonTicket firstTicket = new SeasonTicket ("S1234", "Church Lane", System.currentTimeMillis(), 0L);
 		
+		//print firstTicket startValidPeriod
+		System.out.println("The start Valid Period for Ticket is: " + firstTicket.getStartValidPeriod());
+		
+		//SeasonTicket secondTicket = new SeasonTicket ("S4567", "Church Lane", System.currentTimeMillis(), 0L);
+		
 		//Test whether the entity class was initiated
-		System.out.println(firstTicket);
+		//System.out.println(firstTicket);
+		
+		/*Test Whether Entity Class SeasonTicket is Integrated with 
+		 * Service Class UsageRecord. 
+		  
+		 */
+		integrateWithUsageRecord(firstTicket);
+		
+	
+		
+	}
+	
+	//Method takes an entity class parameter and then passes it onto Service class
+	// It checks whether the service class works correctly with entity class
+	public static void integrateWithUsageRecord(SeasonTicket ticket){
+		
+		UsageRecord testVariable1 = new UsageRecord(ticket.getId(),ticket.getStartValidPeriod());
+		
+        System.out.println("The recorded usage for ticket is: " + testVariable1);
+       
+
+		
+			
+		
 	}
 
 }
