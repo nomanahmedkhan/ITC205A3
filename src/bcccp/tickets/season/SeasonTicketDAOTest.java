@@ -1,3 +1,7 @@
+/* This class is created By Noman Ahmed Khan for unit testing of SeasonTicketDAO class
+ while following the JUnit framework. It tests the methods within the SeasonTicketDAO Class
+ */
+
 package bcccp.tickets.season;
 
 import java.util.*;
@@ -98,10 +102,10 @@ public class SeasonTicketDAOTest {
 		test1.recordTicketExit(ticket3.getId());
 		
 		//See if ticket3's usage has been recorded.
-				System.out.println(ticket3);
+		System.out.println(ticket3);
 		
 	
-		
+		//Print details for ticket4. 
 		System.out.println(ticket4);
 		//printing the HashMap to see if the values were actually registered/deregistered.
 		//System.out.println(Arrays.asList(currentTickets)); // method 1
