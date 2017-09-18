@@ -97,6 +97,12 @@ public class IntegrationTesting {
 		sTicketDAO.registerTicket(t4);
 		sTicketDAO.registerTicket(t5);
 		
+		
+		//test getNumberOfTickets method by displaying how many tickets are
+		//registered
+		System.out.println("\nThe number of tickets registered are: \n" 
+		+ sTicketDAO.getNumberOfTickets());
+		
 		//print the currentTickets Map where the tickets are stored to
 		//whether the tickets were registered or not.
 		System.out.println("The Five Registered Tickets are Below: \n");
@@ -105,6 +111,12 @@ public class IntegrationTesting {
 		//test SeasonTicketDAO's deregisterTicket method.
 		sTicketDAO.deregisterTicket(t1);
 		sTicketDAO.deregisterTicket(t5);
+		
+		//confirm getNumberOfTickets method by displaying how many tickets are
+		//left after using deregister method
+		System.out.println("\nThe number of tickets left registered are: \n" 
+				+ sTicketDAO.getNumberOfTickets());
+				
 		
 		//print the currentTickets Map where the tickets are stored to
 		//whether the tickets were deregistered or not.
