@@ -99,8 +99,18 @@ public class IntegrationTesting {
 		
 		//print the currentTickets Map where the tickets are stored to
 		//whether the tickets were registered or not.
+		System.out.println("The Five Registered Tickets are Below: \n");
 		System.out.println(Arrays.asList(sTicketDAO.currentTickets));
 	
+		//test SeasonTicketDAO's deregisterTicket method.
+		sTicketDAO.deregisterTicket(t1);
+		sTicketDAO.deregisterTicket(t5);
+		
+		//print the currentTickets Map where the tickets are stored to
+		//whether the tickets were deregistered or not.
+		System.out.println("\nThe Two Registered Tickets S1111 and S5555 have been removed: \n");
+		System.out.println(Arrays.asList(sTicketDAO.currentTickets));
+		
 	}
 	
 
