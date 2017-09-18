@@ -28,31 +28,45 @@ public class IntegrationTesting {
        
 		//Initiate the entity class
 		
-		//ISeasonTicket firstTicket = new SeasonTicket ("S1234", "Church Lane", System.currentTimeMillis(), 0L);
-		
-		//print firstTicket startValidPeriod
-		//System.out.println("The start Valid Period for Ticket is: " + firstTicket.getStartValidPeriod());
-		
-		//SeasonTicket secondTicket = new SeasonTicket ("S4567", "Church Lane", System.currentTimeMillis(), 0L);
+		SeasonTicket firstTicket = new SeasonTicket ("S4567", "Church Lane", System.currentTimeMillis(), 0L);
 		
 		//Test whether the entity class was initiated
-		//System.out.println(firstTicket);
+		System.out.println("Entity Class initiated with ticket below: \n");
+		System.out.println(firstTicket);
+		
+		
 		
 		/*Test Whether Entity Class SeasonTicket is Integrated with 
 		 * Service Class UsageRecord. 
 		  
 		 */
-		//integrateWithUsageRecord(firstTicket);
+		//integrateWithUsageRecord();
+	
+		
 		
 	    /* Test whether the entity class can integrate with
 	     * its Data Access Object class SeasonTicketDAO
 	     */
-		integrateWithSeasonTicketDAO();
+		//integrateWithSeasonTicketDAO();
 	}
 	
-	//Method takes an entity class parameter and then passes it onto Service class
+	
+	
+	
+	
+	
+	
+	
+	
+	//Method checks integration of Entity class SeasonTicket
+	//with service class UsageRecord
 	// It checks whether the service class works correctly with entity class
-	public static void integrateWithUsageRecord(ISeasonTicket ticket){
+	public static void integrateWithUsageRecord(){
+		System.out.println("Integration Testing with UsageRecord class \n");
+		
+		ISeasonTicket ticket = new SeasonTicket ("S1234", "Church Lane", System.currentTimeMillis(), 0L);
+		//print firstTicket startValidPeriod
+		System.out.println("The start Valid Period for Ticket is: " + ticket.getStartValidPeriod());
 		
 		UsageRecord testVariable1 = new UsageRecord(ticket.getId(),ticket.getStartValidPeriod());
 		
@@ -60,7 +74,7 @@ public class IntegrationTesting {
        
 		ticket.recordUsage(testVariable1);
 		
-		/*boolean isTicketInUse = ticket.inUse();
+		boolean isTicketInUse = ticket.inUse();
 		
 		if(isTicketInUse == true){
 			System.out.println("UsageRecord worked, Ticket is currently in Use " +
@@ -71,7 +85,7 @@ public class IntegrationTesting {
 		}
 		else{
 			System.out.println("UsageRecord did not work");
-		}*/
+		}
 		
        ticket.endUsage(System.currentTimeMillis());
 		
@@ -81,6 +95,13 @@ public class IntegrationTesting {
 		
 	}
 	
+	
+	
+	
+	
+	//Method checks integration of Entity class SeasonTicket
+	//with service class SeasonTicketDAO
+	// It checks whether the service class works correctly with entity class
 	public static void integrateWithSeasonTicketDAO(){
 		IUsageRecordFactory factory = new UsageRecordFactory();
 		SeasonTicketDAO sTicketDAO = new SeasonTicketDAO(factory);
@@ -112,6 +133,7 @@ public class IntegrationTesting {
 		sTicketDAO.deregisterTicket(t1);
 		sTicketDAO.deregisterTicket(t5);
 		
+		
 		//confirm getNumberOfTickets method by displaying how many tickets are
 		//left after using deregister method
 		System.out.println("\nThe number of tickets left registered are: \n" 
@@ -122,6 +144,7 @@ public class IntegrationTesting {
 		//whether the tickets were deregistered or not.
 		System.out.println("\nThe Two Registered Tickets S1111 and S5555 have been removed: \n");
 		System.out.println(Arrays.asList(sTicketDAO.currentTickets));
+		
 		
 	}
 	
