@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Arrays;
 
 import bcccp.tickets.season.ISeasonTicket;
 import bcccp.tickets.season.IUsageRecordFactory;
@@ -87,9 +88,19 @@ public class IntegrationTesting {
 		ISeasonTicket t2 = new SeasonTicket ("S2222", "Church Lane", System.currentTimeMillis(), 0L);
 		ISeasonTicket t3 = new SeasonTicket ("S3333", "Melbourne CBD", System.currentTimeMillis(), 0L);
 		ISeasonTicket t4 = new SeasonTicket ("S4444", "Sydney CBD", System.currentTimeMillis(), 0L);
-		ISeasonTicket t6 = new SeasonTicket ("S5555", "Brisbane CBD", System.currentTimeMillis(), 0L);
+		ISeasonTicket t5 = new SeasonTicket ("S5555", "Brisbane CBD", System.currentTimeMillis(), 0L);
 		
+		//test SeasonTicketDAO's registerTicket method with the SeasonTickets created.
+		sTicketDAO.registerTicket(t1);
+		sTicketDAO.registerTicket(t2);
+		sTicketDAO.registerTicket(t3);
+		sTicketDAO.registerTicket(t4);
+		sTicketDAO.registerTicket(t5);
 		
+		//print the currentTickets Map where the tickets are stored to
+		//whether the tickets were registered or not.
+		System.out.println(Arrays.asList(sTicketDAO.currentTickets));
+	
 	}
 	
 
