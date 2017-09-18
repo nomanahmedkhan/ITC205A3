@@ -28,11 +28,11 @@ public class IntegrationTesting {
        
 		//Initiate the entity class
 		
-		SeasonTicket firstTicket = new SeasonTicket ("S4567", "Church Lane", System.currentTimeMillis(), 0L);
+		//SeasonTicket firstTicket = new SeasonTicket ("S4567", "Church Lane", System.currentTimeMillis(), 0L);
 		
 		//Test whether the entity class was initiated
-		System.out.println("Entity Class initiated with ticket below: \n");
-		System.out.println(firstTicket);
+		//System.out.println("Entity Class initiated with ticket below: \n");
+		//System.out.println(firstTicket);
 		
 		
 		
@@ -47,7 +47,7 @@ public class IntegrationTesting {
 	    /* Test whether the entity class can integrate with
 	     * its Data Access Object class SeasonTicketDAO
 	     */
-		//integrateWithSeasonTicketDAO();
+		integrateWithSeasonTicketDAO();
 	}
 	
 	
@@ -103,6 +103,7 @@ public class IntegrationTesting {
 	//with service class SeasonTicketDAO
 	// It checks whether the service class works correctly with entity class
 	public static void integrateWithSeasonTicketDAO(){
+		System.out.println("Integration Testing with SeasonTicketDAO class \n");
 		IUsageRecordFactory factory = new UsageRecordFactory();
 		SeasonTicketDAO sTicketDAO = new SeasonTicketDAO(factory);
 		ISeasonTicket t1 = new SeasonTicket ("S1111", "Church Lane", System.currentTimeMillis(), 0L);
@@ -145,9 +146,20 @@ public class IntegrationTesting {
 		System.out.println("\nThe Two Registered Tickets S1111 and S5555 have been removed: \n");
 		System.out.println(Arrays.asList(sTicketDAO.currentTickets));
 		
-		
+		//Test method findTicketById
+		System.out.println("\nThe ticket with id S2222 should be displayed below\n");
+		System.out.println(sTicketDAO.findTicketById("S2222"));
 	}
 	
+	
+	/*This method is called to test integration of all four classes of
+	 * Season Tickets Package
+	 * SeasonTicket (Entity) SeasonTicketDAO(Service) UsageRecord(Service)
+	 * UsageRecordFactory (Service) with the class IntegrationTesting (Controller) 
+	 */
+	 public static void integrateWithAllFourClasses(){
+		 
+	 }
 
 }
 
