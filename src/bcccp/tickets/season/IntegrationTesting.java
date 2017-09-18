@@ -27,7 +27,7 @@ public class IntegrationTesting {
        
 		//Initiate the entity class
 		
-		SeasonTicket firstTicket = new SeasonTicket ("S1234", "Church Lane", System.currentTimeMillis(), 0L);
+		ISeasonTicket firstTicket = new SeasonTicket ("S1234", "Church Lane", System.currentTimeMillis(), 0L);
 		
 		//print firstTicket startValidPeriod
 		System.out.println("The start Valid Period for Ticket is: " + firstTicket.getStartValidPeriod());
@@ -49,7 +49,7 @@ public class IntegrationTesting {
 	
 	//Method takes an entity class parameter and then passes it onto Service class
 	// It checks whether the service class works correctly with entity class
-	public static void integrateWithUsageRecord(SeasonTicket ticket){
+	public static void integrateWithUsageRecord(ISeasonTicket ticket){
 		
 		UsageRecord testVariable1 = new UsageRecord(ticket.getId(),ticket.getStartValidPeriod());
 		
