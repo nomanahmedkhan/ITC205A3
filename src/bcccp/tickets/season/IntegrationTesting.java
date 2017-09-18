@@ -30,7 +30,7 @@ public class IntegrationTesting {
 		ISeasonTicket firstTicket = new SeasonTicket ("S1234", "Church Lane", System.currentTimeMillis(), 0L);
 		
 		//print firstTicket startValidPeriod
-		System.out.println("The start Valid Period for Ticket is: " + firstTicket.getStartValidPeriod());
+		//System.out.println("The start Valid Period for Ticket is: " + firstTicket.getStartValidPeriod());
 		
 		//SeasonTicket secondTicket = new SeasonTicket ("S4567", "Church Lane", System.currentTimeMillis(), 0L);
 		
@@ -41,10 +41,12 @@ public class IntegrationTesting {
 		 * Service Class UsageRecord. 
 		  
 		 */
-		integrateWithUsageRecord(firstTicket);
+		//integrateWithUsageRecord(firstTicket);
 		
-	
-		
+	    /* Test whether the entity class can integrate with
+	     * its Data Access Object class SeasonTicketDAO
+	     */
+		integrateWithSeasonTicketDAO();
 	}
 	
 	//Method takes an entity class parameter and then passes it onto Service class
@@ -75,6 +77,12 @@ public class IntegrationTesting {
 		System.out.println("\nThe details recorded within UsageRecord class after ending usage: \n" + testVariable1);
 		System.out.println("");
 		System.out.println("The details recorded within SeasonTicket class after ending usage: \n" + ticket);
+		
+	}
+	
+	public static void integrateWithSeasonTicketDAO(){
+		IUsageRecordFactory factory = new UsageRecordFactory();
+		SeasonTicketDAO sTicketDAO = new SeasonTicketDAO(factory);
 		
 	}
 
