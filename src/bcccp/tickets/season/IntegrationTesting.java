@@ -27,7 +27,7 @@ public class IntegrationTesting {
        
 		//Initiate the entity class
 		
-		ISeasonTicket firstTicket = new SeasonTicket ("S1234", "Church Lane", System.currentTimeMillis(), 0L);
+		//ISeasonTicket firstTicket = new SeasonTicket ("S1234", "Church Lane", System.currentTimeMillis(), 0L);
 		
 		//print firstTicket startValidPeriod
 		//System.out.println("The start Valid Period for Ticket is: " + firstTicket.getStartValidPeriod());
@@ -83,7 +83,15 @@ public class IntegrationTesting {
 	public static void integrateWithSeasonTicketDAO(){
 		IUsageRecordFactory factory = new UsageRecordFactory();
 		SeasonTicketDAO sTicketDAO = new SeasonTicketDAO(factory);
+		ISeasonTicket t1 = new SeasonTicket ("S1111", "Church Lane", System.currentTimeMillis(), 0L);
+		ISeasonTicket t2 = new SeasonTicket ("S2222", "Church Lane", System.currentTimeMillis(), 0L);
+		ISeasonTicket t3 = new SeasonTicket ("S3333", "Melbourne CBD", System.currentTimeMillis(), 0L);
+		ISeasonTicket t4 = new SeasonTicket ("S4444", "Sydney CBD", System.currentTimeMillis(), 0L);
+		ISeasonTicket t6 = new SeasonTicket ("S5555", "Brisbane CBD", System.currentTimeMillis(), 0L);
+		
 		
 	}
+	
 
 }
+
