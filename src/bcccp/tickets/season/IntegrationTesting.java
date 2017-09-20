@@ -192,6 +192,14 @@ public class IntegrationTesting {
 			sTicketDAO.recordTicketEntry(t4.getId());
 			sTicketDAO.recordTicketEntry(t5.getId());
 			
+			//Further confirm integration of all classes by using 
+			//recordTicketExit method.
+			sTicketDAO.recordTicketExit(t1.getId());
+			sTicketDAO.recordTicketExit(t2.getId());
+			sTicketDAO.recordTicketExit(t3.getId());
+			sTicketDAO.recordTicketExit(t4.getId());
+			sTicketDAO.recordTicketExit(t5.getId());
+			
 			
 			//print the tickets to show that they have been registered 
 			//with SeasonTicketDAO and made with  UsageRecordFactory
