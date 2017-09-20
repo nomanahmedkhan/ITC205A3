@@ -47,7 +47,7 @@ public class IntegrationTesting {
 	    /* Test whether the entity class can integrate with
 	     * its Data Access Object class SeasonTicketDAO
 	     */
-		integrateWithSeasonTicketDAO();
+		//integrateWithSeasonTicketDAO();
 	}
 	
 	
@@ -158,7 +158,25 @@ public class IntegrationTesting {
 	 * UsageRecordFactory (Service) with the class IntegrationTesting (Controller) 
 	 */
 	 public static void integrateWithAllFourClasses(){
-		 
+		 System.out.println("Integration Testing with All the classes within Season Tickets package \n");
+			//initiate classes for testing
+		    IUsageRecordFactory factory = new UsageRecordFactory();
+			SeasonTicketDAO sTicketDAO = new SeasonTicketDAO(factory);
+			
+			//create tickets to test with all classes within SeasonTicket class
+			ISeasonTicket t1 = new SeasonTicket ("S1111", "Church Lane", System.currentTimeMillis(), 0L);
+			ISeasonTicket t2 = new SeasonTicket ("S2222", "Church Lane", System.currentTimeMillis(), 0L);
+			ISeasonTicket t3 = new SeasonTicket ("S3333", "Melbourne CBD", System.currentTimeMillis(), 0L);
+			ISeasonTicket t4 = new SeasonTicket ("S4444", "Sydney CBD", System.currentTimeMillis(), 0L);
+			ISeasonTicket t5 = new SeasonTicket ("S5555", "Brisbane CBD", System.currentTimeMillis(), 0L);
+			
+			
+			sTicketDAO.registerTicket(t1);
+			sTicketDAO.registerTicket(t2);
+			sTicketDAO.registerTicket(t3);
+			sTicketDAO.registerTicket(t4);
+			sTicketDAO.registerTicket(t5);
+			
 	 }
 
 }
