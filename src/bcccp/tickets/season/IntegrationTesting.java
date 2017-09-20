@@ -48,6 +48,8 @@ public class IntegrationTesting {
 	     * its Data Access Object class SeasonTicketDAO
 	     */
 		//integrateWithSeasonTicketDAO();
+		
+		integrateWithAllFourClasses();
 	}
 	
 	
@@ -185,6 +187,12 @@ public class IntegrationTesting {
 			sTicketDAO.recordTicketEntry(t3.getId());
 			sTicketDAO.recordTicketEntry(t4.getId());
 			sTicketDAO.recordTicketEntry(t5.getId());
+			
+			System.out.println(t1);
+			System.out.println(t2);
+			System.out.println(t3);
+			System.out.println(t4);
+			System.out.println(t5);
 	 }
 
 }
