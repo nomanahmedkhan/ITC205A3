@@ -170,7 +170,7 @@ public class IntegrationTesting {
 			ISeasonTicket t4 = new SeasonTicket ("S4444", "Sydney CBD", System.currentTimeMillis(), 0L);
 			ISeasonTicket t5 = new SeasonTicket ("S5555", "Brisbane CBD", System.currentTimeMillis(), 0L);
 			
-			
+			//register tickets with SeasonTicketDAO class
 			sTicketDAO.registerTicket(t1);
 			sTicketDAO.registerTicket(t2);
 			sTicketDAO.registerTicket(t3);
