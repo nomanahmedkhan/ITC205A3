@@ -179,7 +179,9 @@ public class IntegrationTesting {
 			sTicketDAO.registerTicket(t4);
 			sTicketDAO.registerTicket(t5);
 			
-			
+			//Print shows that no usage has been recorded;
+			System.out.println("\nTicket hasnt yet been recorded\n");
+			System.out.println(t1);
 			
 			//record ticket entry which will further use UsageRecord and UsageRecordFactory
 			//classes. This will ensure that all four classes are working together perfectly,
@@ -195,6 +197,8 @@ public class IntegrationTesting {
 			//with SeasonTicketDAO and made with  UsageRecordFactory
 			//and recorded with UsageRecord while created with SeasonTicket
 			// and all of them called from IntegrationTesting.java
+			
+			System.out.println("\nThe 5 tickets Entry have been recorded as seen below\n");
 			System.out.println(t1);
 			System.out.println(t2);
 			System.out.println(t3);
