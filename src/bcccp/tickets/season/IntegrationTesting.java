@@ -177,6 +177,14 @@ public class IntegrationTesting {
 			sTicketDAO.registerTicket(t4);
 			sTicketDAO.registerTicket(t5);
 			
+			//record ticket entry which will further use UsageRecord and UsageRecordFactory
+			//classes. This will ensure that all four classes are working together perfectly,
+			//passing arguments and receiving parameters correctly.
+			sTicketDAO.recordTicketEntry(t1.getId());
+			sTicketDAO.recordTicketEntry(t2.getId());
+			sTicketDAO.recordTicketEntry(t3.getId());
+			sTicketDAO.recordTicketEntry(t4.getId());
+			sTicketDAO.recordTicketEntry(t5.getId());
 	 }
 
 }
